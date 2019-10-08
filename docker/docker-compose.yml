@@ -1,0 +1,31 @@
+# Copyright (c) 2019 R. Tohid
+#
+# Distributed under the Boost Software License, Version 1.0. (See a copy at
+# http://www.boost.org/LICENSE_1_0.txt)
+
+version: '3'
+
+services:
+    flecsi:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: flecsi-project
+        container_name: flecsi-stellar
+        volumes:
+            - ./spack:/home/stellar/src/spack
+            - ./scripts/vimrc:/home/stellar/.vimrc
+            - ./scripts:/scripts/
+        restart: on-failure
+    flecsis:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: flecsi-project
+        container_name: flecsi-stellar
+        volumes:
+            - ./spack:/home/stellar/src/spack
+            - ./scripts/vimrc:/home/stellar/.vimrc
+            - /home/rod/src/scripts/build/flecsi:/scripts/flecsi
+        restart: on-failure
+

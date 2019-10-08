@@ -1,0 +1,9 @@
+# directories
+# -----------
+.vscode/
+__pycache__/
+build*/
+
+# files
+# -----
+.ycm_extra_conf.py
